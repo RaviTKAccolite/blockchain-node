@@ -2,7 +2,11 @@ package com.example.demo.service.impl;
 
 import com.example.demo.model.MessageInitializerRequestBody;
 import com.example.demo.service.NodeService;
+import com.example.demo.service.util.JsonReader;
+import java.util.List;
 import lombok.extern.slf4j.Slf4j;
+import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -10,6 +14,9 @@ import org.springframework.stereotype.Service;
 public class NodeServiceImpl implements NodeService {
 
   private static final String NodeServiceImpl = "NodeServiceImpl";
+
+  @Autowired
+  JsonReader jsonReader;
 
   @Override
   public void messageInitializer(MessageInitializerRequestBody requestBody) {
@@ -25,6 +32,13 @@ public class NodeServiceImpl implements NodeService {
       //TODO
       messageAcceptor(requestBody);
     }
+  }
+
+  @Override
+  public List<String> miningRequest() {
+    JSONObject questionnaire =  jsonReader.jsonToObject("/Questionnaire.json", JSONObject.class);
+
+    return null;
   }
 
   private void messageAcceptor(MessageInitializerRequestBody requestBody){

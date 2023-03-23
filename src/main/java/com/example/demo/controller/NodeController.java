@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.model.MessageInitializerRequestBody;
 import com.example.demo.service.NodeService;
+import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,6 +41,17 @@ public class NodeController {
     nodeService.transactionValidation(requestBody);
     long responseTime = System.nanoTime() - startTime;
     log.info(NODE_CONTROLLER + "response time in ns : "+ responseTime);
+  }
+
+  @PostMapping(value = "/miningRequest")
+  public List<String> miningRequest()
+  {
+    long startTime = System.nanoTime();
+    log.info(NODE_CONTROLLER + "miningRequest called to " + "current node details ");// TODO
+    List<String> questions = nodeService.miningRequest();
+    long responseTime = System.nanoTime() - startTime;
+    log.info(NODE_CONTROLLER + "response time in ns : "+ responseTime);
+    return questions;
   }
 
 }

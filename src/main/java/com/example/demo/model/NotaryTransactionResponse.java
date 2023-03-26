@@ -10,8 +10,7 @@ import lombok.NonNull;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class MessageInitializerRequestBody {
-
+public class NotaryTransactionResponse {
   @NonNull
   private String initializerName;
 
@@ -20,4 +19,7 @@ public class MessageInitializerRequestBody {
 
   private String message;
 
+  private Boolean isDestination;
+
+  private Boolean isValidTransaction;
 }

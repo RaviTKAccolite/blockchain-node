@@ -1,0 +1,12 @@
+{
+  "nodeName": "Node001",
+  "nodeId": "001",
+  "nodePassword": "Node001P",
+  "portNumber": "8081",
+  "transactionSecretKey": "transactionSecretKey1000",
+  "authority": [
+    "002"
+  ],
+  "authorizationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub2RlTmFtZSI6Ik5vZGUwMDEiLCJub2RlSWQiOiIwMDEiLCJwb3J0TnVtYmVyIjoiODA4MSJ9.77QQZuXtHCpMfCTgpbRRyPNnXZ0AZsX1C00yjthdVpU",
+  "secretMiningKey": []
+}

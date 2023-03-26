@@ -2,7 +2,9 @@ package com.example.demo.service.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.InputStream;
+import org.springframework.stereotype.Component;
 
+@Component
 public class JsonReader {
   public JsonReader() {
   }

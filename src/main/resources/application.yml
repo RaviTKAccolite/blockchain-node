@@ -1,3 +1,13 @@
 
 server:
   port: 8081
+
+node:
+  auth:
+    token: dummy
+
+spring:
+  application:
+    name: blockchain-node
+logging:
+  file: logs/${spring.application.name}.log

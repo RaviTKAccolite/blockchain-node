@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,11 +23,12 @@ public class NodeController {
 
   @PostMapping(value = "/messageInitializer")
   public void messageInitializer(
+      @RequestHeader(name = "AuthHeader") String authHeader,
       @RequestBody MessageInitializerRequestBody requestBody)
   {
     long startTime = System.nanoTime();
     log.info(NODE_CONTROLLER + "messageInitializer called by " + requestBody.getInitializerId());
-    nodeService.messageInitializer(requestBody);
+    nodeService.messageInitializer(authHeader, requestBody);
     long responseTime = System.nanoTime() - startTime;
     log.info(NODE_CONTROLLER + "response time in ns : "+ responseTime);
   }

@@ -5,9 +5,10 @@ import java.util.List;
 
 public interface NodeService {
 
-  void messageInitializer(MessageInitializerRequestBody requestBody);
+  void messageInitializer(String authHeader, MessageInitializerRequestBody requestBody)
+      throws Exception;
 
-  void transactionValidation(MessageInitializerRequestBody requestBody);
+  void transactionValidation(MessageInitializerRequestBody requestBody) throws Exception;
 
   List<String> miningRequest();
 }

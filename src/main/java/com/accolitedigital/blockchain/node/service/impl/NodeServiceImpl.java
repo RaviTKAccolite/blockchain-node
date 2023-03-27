@@ -26,9 +26,6 @@ public class NodeServiceImpl implements NodeService {
   JsonReader jsonReader;
 
   @Autowired
-  AppConfig appConfig;
-
-  @Autowired
   NotaryIntegrationService notaryIntegrationService;
 
   @Autowired
@@ -92,7 +89,7 @@ public class NodeServiceImpl implements NodeService {
   }
 
   private Boolean isAuthValid(String authToken) {
-    return appConfig.getAuthToken().equals(authToken);
+    return sendNodeConfiguration().getAuthorizationToken().equals(authToken);
   }
 
   private NodeConfiguration sendNodeConfiguration() {

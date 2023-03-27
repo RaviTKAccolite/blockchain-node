@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.accolitedigital.blockchain.node.entity;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.util.List;

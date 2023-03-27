@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.accolitedigital.blockchain.node.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,7 +10,8 @@ import lombok.NonNull;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class NotaryTransactionRequest {
+public class MessageInitializerRequestBody {
+
   @NonNull
   private String initializerName;
 
@@ -19,7 +20,4 @@ public class NotaryTransactionRequest {
 
   private String message;
 
-  private Boolean isDestination;
-
-  private Boolean isValidTransaction;
 }

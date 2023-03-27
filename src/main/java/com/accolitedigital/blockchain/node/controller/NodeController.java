@@ -1,7 +1,8 @@
-package com.example.demo.controller;
+package com.accolitedigital.blockchain.node.controller;
 
-import com.example.demo.model.MessageInitializerRequestBody;
-import com.example.demo.service.NodeService;
+import com.accolitedigital.blockchain.node.model.MessageInitializerRequestBody;
+import com.accolitedigital.blockchain.node.model.TransactionValidationRequest;
+import com.accolitedigital.blockchain.node.service.NodeService;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +25,9 @@ public class NodeController {
   @PostMapping(value = "/messageInitializer")
   public void messageInitializer(
       @RequestHeader(name = "AuthHeader") String authHeader,
-      @RequestBody MessageInitializerRequestBody requestBody)
-  {
+      @RequestBody MessageInitializerRequestBody requestBody) throws Exception {
     long startTime = System.nanoTime();
-    log.info(NODE_CONTROLLER + "messageInitializer called by " + requestBody.getInitializerId());
+    log.info(NODE_CONTROLLER + "messageInitializer called by " + requestBody.getInitializerName());
     nodeService.messageInitializer(authHeader, requestBody);
     long responseTime = System.nanoTime() - startTime;
     log.info(NODE_CONTROLLER + "response time in ns : "+ responseTime);
@@ -36,8 +36,7 @@ public class NodeController {
 
   @PostMapping(value = "/transactionValidation")
   public void transactionValidation(
-      @RequestBody MessageInitializerRequestBody requestBody)
-  {
+      @RequestBody TransactionValidationRequest requestBody) throws Exception {
     long startTime = System.nanoTime();
     log.info(NODE_CONTROLLER + "transactionValidation called by " + "current node details ");// TODO
     nodeService.transactionValidation(requestBody);

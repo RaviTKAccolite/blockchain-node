@@ -1,4 +1,4 @@
-package com.example.demo.service.util;
+package com.accolitedigital.blockchain.node.service.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.InputStream;

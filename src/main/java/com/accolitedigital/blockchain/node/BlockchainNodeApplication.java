@@ -1,17 +1,15 @@
-package com.example.demo;
+package com.accolitedigital.blockchain.node;
 
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.*;
 
 @SpringBootApplication
-@RestController
 @EnableAutoConfiguration
-public class DemoApplication {
+public class BlockchainNodeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(BlockchainNodeApplication.class, args);
 	}
 
 }

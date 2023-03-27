@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.accolitedigital.blockchain.node.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,13 +10,12 @@ import lombok.NonNull;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class MessageInitializerRequestBody {
+public class TransactionValidationRequest {
+  @NonNull
+  private String initializerId;
 
   @NonNull
-  private String initializerName;
-
-  @NonNull
-  private String acceptorName;
+  private String acceptorId;
 
   private String message;
 

@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.accolitedigital.blockchain.node.model;
 
 import java.util.List;
 import lombok.Builder;

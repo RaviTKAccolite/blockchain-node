@@ -1,4 +1,4 @@
-package com.example.demo.config;
+package com.accolitedigital.blockchain.node.config;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;

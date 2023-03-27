@@ -1,9 +1,8 @@
-package com.example.demo.service.impl;
+package com.accolitedigital.blockchain.node.service.impl;
 
-import com.example.demo.config.AppConfig;
-import com.example.demo.model.MessageInitializerRequestBody;
-import com.example.demo.model.NotaryTransactionRequest;
-import com.example.demo.model.NotaryTransactionResponse;
+import com.accolitedigital.blockchain.node.model.MessageInitializerRequestBody;
+import com.accolitedigital.blockchain.node.model.NotaryTransactionResponse;
+import com.accolitedigital.blockchain.node.config.AppConfig;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
@@ -12,14 +11,15 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-class NotaryIntegrationService {
+public class NotaryIntegrationService {
 
   @Autowired
-  RestTemplate restTemplate;
+  private RestTemplate restTemplate;
 
   @Autowired
   AppConfig appConfig;
@@ -29,15 +29,10 @@ class NotaryIntegrationService {
   public ResponseEntity<NotaryTransactionResponse> notaryInitTransaction(
       MessageInitializerRequestBody messageInitializerRequestBody)
       throws Exception {
-    NotaryTransactionRequest notaryTransactionRequest = NotaryTransactionRequest.builder()
-        .isValidTransaction(Boolean.TRUE)
-        .acceptorName(messageInitializerRequestBody.getAcceptorName())
-        .initializerName(messageInitializerRequestBody.getInitializerName())
-        .message(messageInitializerRequestBody.getMessage())
-        .build();
     try {
-      HttpEntity<NotaryTransactionRequest> requestEntity =
-          new HttpEntity<>(notaryTransactionRequest, getBaseRequestHeaders());
+      log.info("Calling initTransaction notary API");
+      HttpEntity<MessageInitializerRequestBody> requestEntity =
+          new HttpEntity<>(messageInitializerRequestBody, getBaseRequestHeaders());
       return restTemplate.exchange(appConfig.getNotaryInitTransactionEndpoint(), HttpMethod.POST,
           requestEntity,
           new ParameterizedTypeReference<NotaryTransactionResponse>() {

@@ -11,3 +11,7 @@ spring:
     name: blockchain-node
 logging:
   file: logs/${spring.application.name}.log
+
+notary:
+  transaction:
+    url: http://localhost:8082/v1/initTransaction

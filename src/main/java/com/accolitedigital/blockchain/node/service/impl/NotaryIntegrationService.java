@@ -30,7 +30,7 @@ public class NotaryIntegrationService {
       MessageInitializerRequestBody messageInitializerRequestBody)
       throws Exception {
     try {
-      log.info("Calling initTransaction notary API");
+      log.info("Calling init Transaction notary API");
       HttpEntity<MessageInitializerRequestBody> requestEntity =
           new HttpEntity<>(messageInitializerRequestBody, getBaseRequestHeaders());
       return restTemplate.exchange(appConfig.getNotaryInitTransactionEndpoint(), HttpMethod.POST,

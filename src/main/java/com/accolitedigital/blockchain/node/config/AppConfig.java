@@ -12,4 +12,10 @@ public class AppConfig {
 
   @Value("${notary.transaction.url}")
   String notaryInitTransactionEndpoint;
+
+  @Value("${notary.validateMining.url}")
+  String notaryValidateMiningEndpoint;
+
+  @Value("${notary.miningRequest.url}")
+  String notaryMiningRequestEndpoint;
 }

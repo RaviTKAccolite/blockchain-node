@@ -1,6 +1,7 @@
 package com.accolitedigital.blockchain.node.service;
 
 import com.accolitedigital.blockchain.node.model.MessageInitializerRequestBody;
+import com.accolitedigital.blockchain.node.model.MiningRequestAnswers;
 import com.accolitedigital.blockchain.node.model.NotaryTransactionResponse;
 import com.accolitedigital.blockchain.node.model.TransactionValidationRequest;
 import com.accolitedigital.blockchain.node.model.TransactionValidationResponse;
@@ -13,5 +14,8 @@ public interface NodeService {
 
   TransactionValidationResponse transactionValidation(TransactionValidationRequest requestBody) throws Exception;
 
-  List<String> miningRequest();
+  List<String> miningRequest(String authHeader, MiningRequestAnswers miningAnswers)
+      throws Exception;
+
+  Boolean miningValidation(MiningRequestAnswers miningAnswer);
 }

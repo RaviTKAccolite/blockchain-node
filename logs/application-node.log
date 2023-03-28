@@ -1,13 +1,1 @@
-2023-03-27 19:18:00 INFO  NodeServiceImpl:38 - NodeServiceImplmessage initialized by : null; message to be received by : null; with message : Hi
-2023-03-27 19:19:40 INFO  NodeServiceImpl:38 - NodeServiceImplmessage initialized by : Node001; message to be received by : Node002; with message : Hi
-2023-03-27 19:20:36 INFO  NodeServiceImpl:38 - NodeServiceImplmessage initialized by : Node001; message to be received by : Node002; with message : Hi
-2023-03-27 19:21:21 INFO  NodeServiceImpl:38 - NodeServiceImplmessage initialized by : Node001; message to be received by : Node002; with message : Hi
-2023-03-27 19:22:59 INFO  NodeServiceImpl:38 - NodeServiceImplmessage initialized by : Node001; message to be received by : Node002; with message : Hi
-2023-03-27 19:23:28 INFO  NotaryIntegrationService:33 - Calling init Transaction notary API
-2023-03-27 19:24:04 INFO  NotaryIntegrationService:41 -  exception  occurred while invoking notary, exception message: 404 : "{"timestamp":"2023-03-27T13:53:31.622+00:00","status":404,"error":"Not Found","path":"/v1/initTransaction"}"
-2023-03-27 19:27:29 INFO  NodeServiceImpl:38 - NodeServiceImplmessage initialized by : Node001; message to be received by : Node002; with message : Hi
-2023-03-27 19:27:45 INFO  NotaryIntegrationService:33 - Calling init Transaction notary API
-2023-03-27 19:28:47 INFO  NotaryIntegrationService:41 -  exception  occurred while invoking notary, exception message: 500 : "{"timestamp":"2023-03-27T13:58:08.339+00:00","status":500,"error":"Internal Server Error","path":"/v1/initializeTransaction"}"
-2023-03-27 19:29:16 INFO  NodeServiceImpl:38 - NodeServiceImplmessage initialized by : Node001; message to be received by : Node002; with message : Hi
-2023-03-27 19:29:23 INFO  NotaryIntegrationService:33 - Calling init Transaction notary API
-2023-03-27 20:52:19 INFO  NotaryIntegrationService:41 -  exception  occurred while invoking notary, exception message: 500 : "{"timestamp":"2023-03-27T14:00:33.186+00:00","status":500,"error":"Internal Server Error","path":"/v1/initializeTransaction"}"
+2023-03-28 12:31:27 INFO  NodeServiceImpl:58 - error

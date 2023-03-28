@@ -1,6 +1,7 @@
 package com.accolitedigital.blockchain.node.controller;
 
 import com.accolitedigital.blockchain.node.model.MessageInitializerRequestBody;
+import com.accolitedigital.blockchain.node.model.MiningRequestAnswers;
 import com.accolitedigital.blockchain.node.model.TransactionValidationRequest;
 import com.accolitedigital.blockchain.node.model.TransactionValidationResponse;
 import com.accolitedigital.blockchain.node.service.NodeService;
@@ -46,15 +47,27 @@ public class NodeController {
     return transactionValidationResponse;
   }
 
-  @PostMapping(value = "/miningRequest")
-  public List<String> miningRequest()
-  {
+  @PostMapping(value = "/miningRequestQuestions")
+  public List<String> miningRequest(
+      @RequestHeader(value = "authHeader", required = false) String authHeader,
+      @RequestBody(required = false) MiningRequestAnswers miningAnswers
+  ) throws Exception {
     long startTime = System.nanoTime();
-    log.info(NODE_CONTROLLER + "miningRequest called to " + "current node details ");// TODO
-    List<String> questions = nodeService.miningRequest();
+    log.info(NODE_CONTROLLER + "miningRequest called to " + "current node details ");
+    List<String> questions = nodeService.miningRequest(authHeader, miningAnswers);
     long responseTime = System.nanoTime() - startTime;
     log.info(NODE_CONTROLLER + "response time in ns : "+ responseTime);
     return questions;
+  }
+
+  @PostMapping(value = "/miningValidation")
+  public Boolean miningValidation(@RequestBody MiningRequestAnswers miningRequestAnswers) {
+    long startTime = System.nanoTime();
+    log.info(NODE_CONTROLLER + "miningValidation called to " + "current node details ");
+    Boolean status = nodeService.miningValidation(miningRequestAnswers);
+    long responseTime = System.nanoTime() - startTime;
+    log.info(NODE_CONTROLLER + "response time in ns : "+ responseTime);
+    return status;
   }
 
 }

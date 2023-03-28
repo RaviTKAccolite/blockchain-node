@@ -11,3 +11,7 @@ logging:
 notary:
   transaction:
     url: http://localhost:8075/v1/initializeTransaction
+  validateMining:
+    url: http://localhost:8075/v1/validateMiningRequest
+  miningRequest:
+    url: http://localhost:8075/v1/miningRequest

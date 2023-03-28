@@ -10,4 +10,4 @@ logging:
 
 notary:
   transaction:
-    url: http://localhost:8082/v1/initTransaction
+    url: http://localhost:8075/v1/initializeTransaction

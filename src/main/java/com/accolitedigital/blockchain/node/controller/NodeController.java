@@ -2,6 +2,7 @@ package com.accolitedigital.blockchain.node.controller;
 
 import com.accolitedigital.blockchain.node.model.MessageInitializerRequestBody;
 import com.accolitedigital.blockchain.node.model.TransactionValidationRequest;
+import com.accolitedigital.blockchain.node.model.TransactionValidationResponse;
 import com.accolitedigital.blockchain.node.service.NodeService;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
@@ -35,13 +36,14 @@ public class NodeController {
 
 
   @PostMapping(value = "/transactionValidation")
-  public void transactionValidation(
+  public TransactionValidationResponse transactionValidation(
       @RequestBody TransactionValidationRequest requestBody) throws Exception {
     long startTime = System.nanoTime();
-    log.info(NODE_CONTROLLER + "transactionValidation called by " + "current node details ");// TODO
-    nodeService.transactionValidation(requestBody);
+    log.info(NODE_CONTROLLER + "transactionValidation called by " + "current node details ");
+    TransactionValidationResponse transactionValidationResponse = nodeService.transactionValidation(requestBody);
     long responseTime = System.nanoTime() - startTime;
     log.info(NODE_CONTROLLER + "response time in ns : "+ responseTime);
+    return transactionValidationResponse;
   }
 
   @PostMapping(value = "/miningRequest")

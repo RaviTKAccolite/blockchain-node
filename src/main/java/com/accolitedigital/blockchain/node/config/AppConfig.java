@@ -10,9 +10,6 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties
 public class AppConfig {
 
-  @Value("${node.auth.token}")
-  String authToken;
-
   @Value("${notary.transaction.url}")
   String notaryInitTransactionEndpoint;
 }

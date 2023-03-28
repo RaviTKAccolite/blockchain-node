@@ -93,7 +93,7 @@ public class NodeServiceImpl implements NodeService {
   }
 
   private NodeConfiguration sendNodeConfiguration() {
-    return jsonReader.jsonToObject("/NodeConfiguration",
+    return jsonReader.jsonToObject("/NodesConfiguration.json",
         NodeConfiguration.class);
   }
 }

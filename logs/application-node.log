@@ -1,1 +1,1 @@
-2023-03-28 12:31:27 INFO  NodeServiceImpl:58 - error
+2023-03-29 11:15:22 INFO  NotaryIntegrationService:42 -  exception  occurred while invoking notary, exception message: 500 : "{"timestamp":"2023-03-29T05:45:22.354+00:00","status":500,"error":"Internal Server Error","path":"/v1/initializeTransaction"}"

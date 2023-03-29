@@ -12,7 +12,7 @@ public interface NodeService {
   NotaryTransactionResponse messageInitializer(String authHeader, MessageInitializerRequestBody requestBody)
       throws Exception;
 
-  TransactionValidationResponse transactionValidation(TransactionValidationRequest requestBody) throws Exception;
+  TransactionValidationResponse transactionValidation(TransactionValidationRequest requestBody, String publicKey) throws Exception;
 
   List<String> miningRequest(String authHeader, MiningRequestAnswers miningAnswers)
       throws Exception;

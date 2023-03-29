@@ -55,7 +55,7 @@ public class NodeServiceImpl implements NodeService {
 
   @Override
   public TransactionValidationResponse transactionValidation(
-      TransactionValidationRequest requestBody) throws Exception {
+      TransactionValidationRequest requestBody, String publicKey) throws Exception {
     Nodes nodesList = jsonReader.jsonToObject("/NodesList.json", Nodes.class);
 
     if (!nodesList.getNodes().contains(requestBody.getInitializerId())) {
@@ -68,7 +68,7 @@ public class NodeServiceImpl implements NodeService {
 
     if (sendNodeConfiguration().getNodeId().equals(requestBody.getAcceptorId())) {
       // calling message acceptor for decryption
-      messageAcceptor(requestBody);
+      messageAcceptor(requestBody, publicKey);
     } else {
       transactionValidationResponse.setIsDestination(Boolean.FALSE);
     }
@@ -115,13 +115,13 @@ public class NodeServiceImpl implements NodeService {
 
   }
 
-  private void messageAcceptor(TransactionValidationRequest requestBody) throws Exception {
+  private void messageAcceptor(TransactionValidationRequest requestBody, String publicKey) throws Exception {
     // TODO decrypting the data transferred
     log.info(NodeServiceImpl + "message initialized by : " + requestBody.getInitializerId()
         + "; message is received by : " + requestBody.getAcceptorId()
         + "; with message : " + requestBody.getMessage());
     String encryptedMessage = notaryIntegrationUtil.decrypt(requestBody.getMessage(),
-        sendNodeConfiguration().getTransactionSecretKey());
+        sendNodeConfiguration().getTransactionSecretKey(), publicKey);
     log.info("EncryptedMessage : " + encryptedMessage);
   }
 

@@ -38,10 +38,11 @@ public class NodeController {
 
   @PostMapping(value = "/transactionValidation")
   public TransactionValidationResponse transactionValidation(
+      @RequestHeader(name = "public-key", required = false) String publicKey,
       @RequestBody TransactionValidationRequest requestBody) throws Exception {
     long startTime = System.nanoTime();
     log.info(NODE_CONTROLLER + "transactionValidation called by " + "current node details ");
-    TransactionValidationResponse transactionValidationResponse = nodeService.transactionValidation(requestBody);
+    TransactionValidationResponse transactionValidationResponse = nodeService.transactionValidation(requestBody, publicKey);
     long responseTime = System.nanoTime() - startTime;
     log.info(NODE_CONTROLLER + "response time in ns : "+ responseTime);
     return transactionValidationResponse;

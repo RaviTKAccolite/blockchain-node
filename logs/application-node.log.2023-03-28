@@ -1,0 +1,15 @@
+2023-03-28 12:31:27 INFO  NodeServiceImpl:58 - error
+2023-03-28 17:54:13 INFO  NodeServiceImpl:41 - NodeServiceImplmessage initialized by : Node001; message to be received by : Node004; with message : Hi
+2023-03-28 17:54:35 INFO  NotaryIntegrationService:34 - Calling init Transaction notary API
+2023-03-28 17:58:36 INFO  NotaryIntegrationService:42 -  exception  occurred while invoking notary, exception message: 500 : "{"timestamp":"2023-03-28T12:28:04.332+00:00","status":500,"error":"Internal Server Error","path":"/v1/initializeTransaction"}"
+2023-03-28 17:58:36 INFO  NodeServiceImpl:41 - NodeServiceImplmessage initialized by : Node001; message to be received by : Node004; with message : Hi
+2023-03-28 17:58:40 INFO  NotaryIntegrationService:34 - Calling init Transaction notary API
+2023-03-28 18:00:04 INFO  NotaryIntegrationService:42 -  exception  occurred while invoking notary, exception message: 500 : "{"timestamp":"2023-03-28T12:30:04.488+00:00","status":500,"error":"Internal Server Error","path":"/v1/initializeTransaction"}"
+2023-03-28 18:01:32 INFO  NodeServiceImpl:41 - NodeServiceImplmessage initialized by : Node001; message to be received by : Node004; with message : Hi
+2023-03-28 18:01:43 INFO  NotaryIntegrationService:34 - Calling init Transaction notary API
+2023-03-28 18:20:27 INFO  NotaryIntegrationService:42 -  exception  occurred while invoking notary, exception message: 500 : "{"timestamp":"2023-03-28T12:50:27.554+00:00","status":500,"error":"Internal Server Error","path":"/v1/initializeTransaction"}"
+2023-03-28 18:20:35 INFO  NodeServiceImpl:41 - NodeServiceImplmessage initialized by : Node001; message to be received by : Node004; with message : Hi
+2023-03-28 18:20:36 INFO  NotaryIntegrationService:34 - Calling init Transaction notary API
+2023-03-28 18:27:47 INFO  NotaryIntegrationService:42 -  exception  occurred while invoking notary, exception message: 500 : "{"timestamp":"2023-03-28T12:57:47.584+00:00","status":500,"error":"Internal Server Error","path":"/v1/initializeTransaction"}"
+2023-03-28 18:28:51 INFO  NodeServiceImpl:41 - NodeServiceImplmessage initialized by : Node001; message to be received by : Node004; with message : Hi
+2023-03-28 18:28:57 INFO  NotaryIntegrationService:34 - Calling init Transaction notary API
